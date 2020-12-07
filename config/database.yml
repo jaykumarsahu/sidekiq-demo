@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: postgres
+  password: password
+  host: localhost
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: sidekiq-demo_development
+
+test:
+  <<: *default
+  database: sidekiq-demo_test
+
+production:
+  <<: *default
+  database: sidekiq-demo_production
+  username: sidekiq-demo
+  password: <%= ENV['SIDEKIQ-DEMO_DATABASE_PASSWORD'] %>
