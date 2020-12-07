@@ -4,7 +4,7 @@ class TopPriorityWorker
   include Sidekiq::Worker
   sidekiq_options queue: :top
 
-  def perform
-    puts "=========#{self.class}=============="
+  def perform(index)
+    # puts "=========#{self.class}===#{index}==========="
   end
 end

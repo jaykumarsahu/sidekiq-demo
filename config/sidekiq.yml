@@ -1,7 +1,4 @@
----
-:logfile: log/sidekiq.log
 :concurrency: 50
-:pidfile: tmp/pids/sidekiq.pid
 :queues:
   - [top, 10]
   - [high, 10]

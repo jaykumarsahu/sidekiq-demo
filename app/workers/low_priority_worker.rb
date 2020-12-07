@@ -4,7 +4,7 @@ class LowPriorityWorker
   include Sidekiq::Worker
   sidekiq_options queue: :low
 
-  def perform
-    puts "=========#{self.class}=============="
+  def perform(index)
+    # puts "=========#{self.class}===#{index}==========="
   end
 end

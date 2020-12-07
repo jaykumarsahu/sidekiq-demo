@@ -4,8 +4,8 @@ class LowPriorityWithRetryFalseWorker
   include Sidekiq::Worker
   sidekiq_options queue: :low, retry: false
 
-  def perform
-    puts "=========#{self.class}=============="
+  def perform(index)
+    puts "=========#{self.class}===#{index}==========="
     raise 'Fail'
   end
 end

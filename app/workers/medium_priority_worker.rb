@@ -4,7 +4,7 @@ class MediumPriorityWorker
   include Sidekiq::Worker
   sidekiq_options queue: :medium
 
-  def perform
-    puts "=========#{self.class}=============="
+  def perform(index)
+    # puts "=========#{self.class}===#{index}==========="
   end
 end
